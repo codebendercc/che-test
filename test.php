@@ -49,27 +49,12 @@ if(
     exit();
 }
 
-// $db = array(
-//     "18:FE:AA:AA:AA:AA" => "DOOR-7-g14f53a19",
-//     "18:FE:AA:AA:AA:BB" => "TEMP-1.0.0"
-// );
-
-// if(isset($db[$_SERVER['HTTP_X_ESP8266_STA_MAC']]))
-// {
-//     if($db[$_SERVER['HTTP_X_ESP8266_STA_MAC']] != $_SERVER['HTTP_X_ESP8266_VERSION'])
-//     {
-//         sendFile("./bin/".$db[$_SERVER['HTTP_X_ESP8266_STA_MAC']]."bin");
-//     }
-//     else
-//     {
-//         header($_SERVER["SERVER_PROTOCOL"].' 304 Not Modified', true, 304);
-//     }
-//     exit();
-// }
-
-sendFile("/tmp/cbtest/Blink.ino.bin");
-
-
-// If we don't know the MAC Address we fail with 500
-
-header($_SERVER["SERVER_PROTOCOL"].' 500 no version for ESP MAC', true, 500);
+if($_SERVER['HTTP_X_ESP8266_VERSION'] == "version")
+{
+    header($_SERVER["SERVER_PROTOCOL"].' 304 Not Modified', true, 304);
+}
+else
+{
+    sendFile("./binaries/httpUpdate.ino.bin");
+}
+exit();
