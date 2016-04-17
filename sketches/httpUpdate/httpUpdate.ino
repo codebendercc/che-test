@@ -68,7 +68,7 @@ void tryToUpdate(void)
 
       Serial.println("Trying to fetch new binary");
 
-      t_httpUpdate_return ret = ESPhttpUpdate.update("http://che-test-tzikis1.c9users.io/test.php", __TIMESTAMP__);
+      t_httpUpdate_return ret = ESPhttpUpdate.update("http://che-test-tzikis1.c9users.io/test.php", "version");
       //t_httpUpdate_return  ret = ESPhttpUpdate.update("https://server/file.bin");
 
       switch (ret) {
