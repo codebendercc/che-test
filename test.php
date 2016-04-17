@@ -4,9 +4,6 @@ header('Content-type: text/plain; charset=utf8', true);
 
 function check_header($name, $value = false) {
     
-    echo $name."\n";
-    echo $value."\n";
-    
     if(!isset($_SERVER[$name])) {
         return false;
     }
