@@ -15,5 +15,6 @@ echo "Generating $tempdir"
 mkdir -p $tempdir && \
 \
 echo "Configuring $filepath with new version on $temppath" && \
-sed -e "s/__CODEBENDER_AUTO_VERSION__/$version/g" -e "s/__CODEBENDER_UPDATE_URL__/http:\/\/che-test-tzikis1.c9users.io\/update.php/g" $filepath > $temppath && \
+url=$(cat ./build/url.txt) && \
+sed -e "s/__CODEBENDER_AUTO_VERSION__/$version/g" -e "s@__CODEBENDER_UPDATE_URL__@$url@g" $filepath > $temppath && \
 echo "New file at $temppath"
