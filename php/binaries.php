@@ -40,6 +40,9 @@ foreach($binaries as $binary)
     if(substr($binary, 0, 1) == ".") continue;
 
     $binaryVersion = substr($binary,-2);
+    $binaryVersion = str_replace(".", "", $binaryVersion);
+    $binaryVersion = str_replace("v", "", $binaryVersion);
+    $binaryVersion = intval($binaryVersion);
 
     $colorHex = dechex($color).dechex($color).dechex($color).dechex($color).dechex($color).dechex($color);
     $color++; $color++;
