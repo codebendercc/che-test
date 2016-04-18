@@ -28,7 +28,7 @@
     </tr>
 <?php
 
-$binaries = scandir("./binaries/");
+$binaries = scandir("../binaries/");
 $binaries = array_reverse($binaries);
 
 $color = 0;
@@ -46,7 +46,7 @@ foreach($binaries as $binary)
 
     echo "<tr style='color:#".$colorHex."'>";
     echo "<td>";
-    // $deviceVersion = file_get_contents("./binaries/".$device);
+    // $deviceVersion = file_get_contents("../binaries/".$device);
     echo $binaryVersion;
     echo"</td>";
     echo "<td>";

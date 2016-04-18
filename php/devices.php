@@ -28,7 +28,7 @@
     </tr>
 <?php
 
-$devices = scandir("./devices/");
+$devices = scandir("../devices/");
 
 foreach($devices as $device)
 {
@@ -39,7 +39,7 @@ foreach($devices as $device)
     echo $device;
     echo"</td>";
     echo "<td>";
-    $deviceVersion = file_get_contents("./devices/".$device);
+    $deviceVersion = file_get_contents("../devices/".$device);
     echo $deviceVersion;
     echo"</td>";
     echo "<td>";
