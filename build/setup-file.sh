@@ -3,7 +3,7 @@
 tempdir=$2
 
 filename="$1.ino"
-filepath="sketches/$1/$filename"
+filepath="$1/$filename"
 temppath="$tempdir/$filename"
 
 version=$(cat /tmp/version)

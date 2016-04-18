@@ -32,7 +32,7 @@ void setup() {
     delay(1000);
   }
 
-  WiFiMulti.addAP("LookyHome2.4", "Looky1987");
+  WiFiMulti.addAP("ssid", "pass");
 
   pinMode(0, OUTPUT);
 }
