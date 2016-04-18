@@ -58,6 +58,6 @@ if(intval($_SERVER['HTTP_X_ESP8266_VERSION']) >= $currentVersion)
 }
 else
 {
-    sendFile("./binaries/sketch.ino.bin.v".$currentVersion);
+    sendFile("../binaries/sketch.ino.bin.v".$currentVersion);
 }
 exit();
