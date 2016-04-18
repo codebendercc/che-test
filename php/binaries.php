@@ -45,7 +45,7 @@ foreach($binaries as $binary)
     $binaryVersion = intval($binaryVersion);
 
     $colorHex = dechex($color).dechex($color).dechex($color).dechex($color).dechex($color).dechex($color);
-    $color++; $color++;
+    $color++;
 
     echo "<tr style='color:#".$colorHex."'>";
     echo "<td>";
