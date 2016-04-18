@@ -48,8 +48,12 @@ if(
 
 $currentVersion = intval(file_get_contents("/tmp/version"));
 
+
+
 if(intval($_SERVER['HTTP_X_ESP8266_VERSION']) >= $currentVersion)
 {
+    file_put_contents("./devices/".$_SERVER['HTTP_X_ESP8266_STA_MAC'], $_SERVER['HTTP_X_ESP8266_VERSION']);
+
     header($_SERVER["SERVER_PROTOCOL"].' 304 Not Modified', true, 304);
 }
 else
