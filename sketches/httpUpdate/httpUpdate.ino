@@ -67,8 +67,10 @@ void tryToUpdate(void)
     if ((WiFiMulti.run() == WL_CONNECTED)) {
 
       Serial.println("Trying to fetch new binary");
+    //   Serial.print("Current Version: ");
+    //   Serial.println("__CODEBENDER_AUTO_VERSION__");
 
-      t_httpUpdate_return ret = ESPhttpUpdate.update("http://che-test-tzikis1.c9users.io/test.php", "version");
+      t_httpUpdate_return ret = ESPhttpUpdate.update("__CODEBENDER_UPDATE_URL__", "__CODEBENDER_AUTO_VERSION__");
       //t_httpUpdate_return  ret = ESPhttpUpdate.update("https://server/file.bin");
 
       switch (ret) {

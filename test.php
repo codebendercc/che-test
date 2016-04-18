@@ -46,12 +46,14 @@ if(
     exit();
 }
 
-if($_SERVER['HTTP_X_ESP8266_VERSION'] == "version")
+$currentVersion = intval(file_get_contents("/tmp/version"));
+
+if(intval($_SERVER['HTTP_X_ESP8266_VERSION']) >= $currentVersion)
 {
     header($_SERVER["SERVER_PROTOCOL"].' 304 Not Modified', true, 304);
 }
 else
 {
-    sendFile("./binaries/httpUpdate.ino.bin");
+    sendFile("./binaries/httpUpdate.ino.bin.v".$currentVersion);
 }
 exit();
