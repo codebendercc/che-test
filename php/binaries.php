@@ -49,7 +49,6 @@ foreach($binaries as $binary)
 
     echo "<tr style='color:#".$colorHex."'>";
     echo "<td>";
-    // $deviceVersion = file_get_contents("../binaries/".$device);
     echo $binaryVersion;
     echo"</td>";
     echo "<td>";
