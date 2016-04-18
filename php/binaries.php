@@ -33,8 +33,6 @@ $binaries = array_reverse($binaries);
 
 $color = 0;
 
-$color = 0;
-
 foreach($binaries as $binary)
 {
     if(substr($binary, 0, 1) == ".") continue;
