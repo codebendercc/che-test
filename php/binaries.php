@@ -30,6 +30,7 @@
 
 $binaries = scandir("../binaries/");
 $binaries = array_reverse($binaries);
+usort($binaries, function($a, $b){ return getBinaryVersion($b) - getBinaryVersion($a);});
 
 $color = 0;
 
@@ -37,10 +38,7 @@ foreach($binaries as $binary)
 {
     if(substr($binary, 0, 1) == ".") continue;
 
-    $binaryVersion = substr($binary,-2);
-    $binaryVersion = str_replace(".", "", $binaryVersion);
-    $binaryVersion = str_replace("v", "", $binaryVersion);
-    $binaryVersion = intval($binaryVersion);
+    $binaryVersion = getBinaryVersion($binary);
 
     $colorHex = dechex($color).dechex($color).dechex($color).dechex($color).dechex($color).dechex($color);
     $color++;
@@ -59,6 +57,14 @@ foreach($binaries as $binary)
     echo "</tr>";
 }
 
+function getBinaryVersion($binaryName)
+{
+    $binaryVersion = substr($binaryName,-2);
+    $binaryVersion = str_replace(".", "", $binaryVersion);
+    $binaryVersion = str_replace("v", "", $binaryVersion);
+    $binaryVersion = intval($binaryVersion);
+    return $binaryVersion;
+}
 
 ?>
 </table>
